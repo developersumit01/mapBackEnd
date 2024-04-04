@@ -1,15 +1,15 @@
 {
-      "version":2,
-      "builds":[
-            {
-                  "src":"new.js",
-                  "use":"@vercel/node"
-            }
-      ],
-      "routes":[
-            {
-                  "src":"/(.*)",
-                  "dest":"new.js"
-            }
-      ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "new.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "new.js"
+    }
+  ]
 }
