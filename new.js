@@ -15,7 +15,9 @@ app.post("/upload", function (req, res) {
   });
   res.send(data);
 });
+console.log("API Deployed")
 app.get("/getdata", function (req, res) {
+  console.log("GetData called")
   fileS.readFile("./Data.json", "utf-8", (err, result) => {
     res.send(JSON.parse(result));
     
