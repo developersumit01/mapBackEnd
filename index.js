@@ -7,7 +7,9 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 app.get("/",(req,res)=>{
-  res.send("Hello World");
+  fileS.readFile("./Data.json", "utf-8", (err, result) => {
+    res.send(JSON.parse(result));
+  });
 })
 
 /** API path that will upload the files */
