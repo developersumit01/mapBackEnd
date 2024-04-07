@@ -6,6 +6,10 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+app.get("/",(req,res)=>{
+  res.send("Hello World");
+})
+
 /** API path that will upload the files */
 app.post("/upload", function (req, res) {
   let data = req.body;
