@@ -1,5 +1,6 @@
 let express = require("express");
 const fileS = require("fs");
+import path from 'path';
 let app = express();
 let cors=require("cors")
 app.use(cors())
@@ -7,7 +8,8 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 app.get("/",(req,res)=>{
-  fileS.readFile("./Data.json", "utf-8", (err, result) => {
+  let usersPath = path.join(process.cwd(), 'Data.json');
+  fileS.readFile(usersPath, "utf-8", (err, result) => {
     res.send(JSON.parse(result));
   });
 })
